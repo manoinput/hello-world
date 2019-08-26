@@ -5,7 +5,7 @@ nodesData:
         name: 'Linuxbox SFC_test_inport'
         type: ns
         useParent: false
-        description: Export
+        description:
         vim: bca3141f-1e5c-4113-bb9e-0d70a354add7
         tenant: c7c42cd9f09d4901b6c8096a4cd9642d
         externalNetworks: []
