@@ -1,0 +1,258 @@
+flavour: default
+level: instLevel1
+nodesData:
+    -
+        deploymentParams:
+            vim: 54dd3ebd-25ff-4533-a06c-b00d9d229bf0
+            tenant: c7c42cd9f09d4901b6c8096a4cd9642d
+            floatingNetwork: c62c8514-94a8-4d77-8142-86ce31c9dc08
+        useParent: false
+        additionalParameters: "{\r\n    \"isAutohealEnabled\": false,\r\n    \"isAutoscaleEnabled\": true,\r\n    \"mufasaInstParamBool\": true,\r\n    \"mufasaInstParamInt\": 1,\r\n    \"mufasaInstParamStr\": \"test\",\r\n    \"Export\": \"Import\"\r\n}"
+        name: mufasa_import
+        type: ns
+        externalNetworks: []
+        children:
+            -
+                useParent: true
+                additionalParameters: "{\r\n    \"isAutohealEnabled\": false,\r\n    \"isAutoscaleEnabled\": false,\r\n    \"scarInstParamBool\": false,\r\n    \"scarInstParamInt\": 1,\r\n    \"scarInstParamStr\": \"scar2\"\r\n}"
+                name: scar2
+                type: ns
+                children:
+                    -
+                        additionalParameters: "{\r\n    \"isAutohealEnabled\": false,\r\n    \"isAutoscaleEnabled\": false,\r\n    \"zazuInstParamBool\": true,\r\n    \"zazuInstParamInt\": 1,\r\n    \"zazuInstParamStr\": \"zazu\"\r\n}"
+                        name: zazu
+                        type: vnf
+                        children:
+                            -
+                                name: nala
+                                type: vdu
+                                children:
+                                    -
+                                        name: nala_data_cp
+                                        type: vnfccp
+                                    -
+                                        cpIpV6Assignment:
+                                            ipAssignmentType: automatic
+                                            fixedIps: []
+                                            ipRanges: []
+                                            dynamicSize: null
+                                        cpIpV4Assignment:
+                                            ipAssignmentType: fixed
+                                            fixedIps:
+                                                - 128.12.1.3
+                                                - 128.12.1.4
+                                            ipRanges: []
+                                            dynamicSize: null
+                                        ext_vl_key: ""
+                                        name: nala_mgmt_ext_cp
+                                        type: vnfcp
+                            -
+                                name: simba
+                                type: vdu
+                                children:
+                                    -
+                                        name: simba_data_cp
+                                        type: vnfccp
+                                    -
+                                        cpIpV6Assignment:
+                                            ipAssignmentType: automatic
+                                            fixedIps: []
+                                            ipRanges: []
+                                            dynamicSize: null
+                                        cpIpV4Assignment:
+                                            ipAssignmentType: dynamicRanges
+                                            fixedIps: []
+                                            ipRanges:
+                                                -
+                                                    start: 128.12.1.12
+                                                    end: 128.12.1.16
+                                                    id: extModel1286-2
+                                            dynamicSize: null
+                                        ext_vl_key: ""
+                                        name: simba_mgmt_ext_cp
+                                        type: vnfcp
+                            -
+                                networkIpV6Assignment:
+                                    isExternal: true
+                                    extCidr: '2001:db8:abcd::/64'
+                                    isAutomatically: false
+                                    subnet: d31af482-0c79-4bc5-b25f-6eb346ea1d17
+                                    addressAllocationMode: automatic
+                                networkIpV4Assignment:
+                                    isExternal: true
+                                    extCidr: 10.0.0.0/24
+                                    isAutomatically: false
+                                    subnet: c5f5b649-bb94-4a4b-8002-986294de3079
+                                    addressAllocationMode: automatic
+                                zoneName: nova
+                                extManagedLinkId: 7121dafb-cfda-4c66-8932-36f19e0ed7bc
+                                isExternal: true
+                                name: cub_vl
+                                type: virtual_link
+            -
+                additionalParameters: "{\r\n    \"isAutohealEnabled\": false,\r\n    \"isAutoscaleEnabled\": false,\r\n    \"zazuInstParamBool\": true,\r\n    \"zazuInstParamInt\": 1,\r\n    \"zazuInstParamStr\": \"zazu1\"\r\n}"
+                name: zazu1
+                type: vnf
+                children:
+                    -
+                        name: nala
+                        type: vdu
+                        children:
+                            -
+                                name: nala_data_cp
+                                type: vnfccp
+                            -
+                                cpIpV6Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: fixed
+                                    fixedIps:
+                                        - 128.12.1.18
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: nala_mgmt_ext_cp
+                                type: vnfcp
+                    -
+                        name: simba
+                        type: vdu
+                        children:
+                            -
+                                name: simba_data_cp
+                                type: vnfccp
+                            -
+                                cpIpV6Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: dynamicRanges
+                                    fixedIps: []
+                                    ipRanges:
+                                        -
+                                            start: 128.12.1.21
+                                            end: 128.12.1.25
+                                            id: extModel1544-2
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: simba_mgmt_ext_cp
+                                type: vnfcp
+                    -
+                        networkIpV6Assignment:
+                            isExternal: false
+                            regularCidr: '1227::/102'
+                            isAutomatically: false
+                            addressAllocationMode: automatic
+                        networkIpV4Assignment:
+                            isExternal: false
+                            regularCidr: 122.17.12.1/24
+                            isAutomatically: false
+                            addressAllocationMode: automatic
+                        isExternal: false
+                        name: cub_vl
+                        type: virtual_link
+            -
+                additionalParameters: "{\r\n    \"isAutohealEnabled\": false,\r\n    \"isAutoscaleEnabled\": false,\r\n    \"zazuInstParamBool\": true,\r\n    \"zazuInstParamInt\": 1,\r\n    \"zazuInstParamStr\": \"zazu2\"\r\n}"
+                name: zazu2
+                type: vnf
+                children:
+                    -
+                        zoneName: nova-1
+                        name: nala
+                        type: vdu
+                        children:
+                            -
+                                name: nala_data_cp
+                                type: vnfccp
+                            -
+                                cpIpV6Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: fixed
+                                    fixedIps:
+                                        - 128.12.1.131
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: nala_mgmt_ext_cp
+                                type: vnfcp
+                    -
+                        zoneName: nova-1
+                        name: simba
+                        type: vdu
+                        children:
+                            -
+                                name: simba_data_cp
+                                type: vnfccp
+                            -
+                                cpIpV6Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: fixed
+                                    fixedIps:
+                                        - 128.12.1.32
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: simba_mgmt_ext_cp
+                                type: vnfcp
+                    -
+                        networkIpV6Assignment:
+                            isExternal: true
+                            extCidr: '2003:db8:abcd::/64'
+                            isAutomatically: false
+                            subnet: aab2f014-2a19-4e13-95e9-a20f28157efb
+                            addressAllocationMode: automatic
+                        networkIpV4Assignment:
+                            isExternal: true
+                            extCidr: 10.2.0.0/24
+                            isAutomatically: false
+                            subnet: ac6ecb4d-e737-478a-8538-33eac2cb4f4b
+                            addressAllocationMode: automatic
+                        zoneName: nova
+                        extManagedLinkId: 9a3f05e3-3328-45ac-8274-809f68883681
+                        isExternal: true
+                        name: cub_vl
+                        type: virtual_link
+            -
+                networkIpV6Assignment:
+                    isExternal: false
+                    regularCidr: '4322::/98'
+                    isAutomatically: false
+                    addressAllocationMode: automatic
+                networkIpV4Assignment:
+                    isExternal: false
+                    regularCidr: 128.12.1.1/24
+                    isAutomatically: false
+                    addressAllocationMode: fixed_dynamic
+                zoneName: nova
+                isExternal: false
+                name: mgmt_vl
+                type: virtual_link
+configurableProperties:
+    mufasa_isGoodGuy: true
+    mufasa_age: '10'
+    mufasa_kind: Leon
+    mufasa_menu_list:
+        - meat
+    scar_isGoodGuy: false
+    scar_age: '2'
+    scar_kind: childfree
+    scar_menu_list:
+        - zazu
+    zazu_isGoodGuy: true
+    zazu_age: '2'
+    zazu_kind: Bird
+    zazu_menu_list:
+        - worms
+        - bugs
