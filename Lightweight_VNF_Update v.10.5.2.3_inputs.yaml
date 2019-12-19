@@ -1,0 +1,102 @@
+flavour: default
+level: instantiationLevel1
+nodesData:
+    -
+        deploymentParams:
+            vim: 54dd3ebd-25ff-4533-a06c-b00d9d229bf0
+            tenant: c7c42cd9f09d4901b6c8096a4cd9642d
+            floatingNetwork: c62c8514-94a8-4d77-8142-86ce31c9dc08
+        additionalParameters: "{\r\n    \"test\":\"test additional parameters\"\r\n}"
+        name: Lightweight_VNF_import_test
+        type: vnf
+        externalNetworks:
+            - dd007e76-6ce0-49b1-856a-1f1aa5323e4a
+        description: 'Test desc'
+        children:
+            -
+                name: lb_node-1
+                type: vdu
+                children:
+                    -
+                        name: lb_data_int_cp
+                        type: vnfccp
+                    -
+                        cpIpV6Assignment: null
+                        cpIpV4Assignment:
+                            ipAssignmentType: fixed
+                            fixedIps:
+                                - 10.0.0.34
+                            ipRanges: []
+                            dynamicSize: null
+                        ext_vl_key: dd007e76-6ce0-49b1-856a-1f1aa5323e4a
+                        name: lb_ext_cp
+                        type: vnfcp
+            -
+                networkIpV6Assignment: null
+                networkIpV4Assignment:
+                    isExternal: false
+                    regularCidr: 122.11.1.1/24
+                    isAutomatically: false
+                    addressAllocationMode: automatic
+                isExternal: false
+                name: lb_ws_vl
+                type: virtual_link
+            -
+                name: ws_node-1
+                type: vdu
+                children:
+                    -
+                        name: ws_data_int_cp
+                        type: vnfccp
+                    -
+                        cpIpV6Assignment: null
+                        cpIpV4Assignment:
+                            ipAssignmentType: dynamicRanges
+                            fixedIps: []
+                            ipRanges:
+                                -
+                                    start: 10.0.0.35
+                                    end: 10.0.0.50
+                                    id: extModel1733-2
+                            dynamicSize: null
+                        ext_vl_key: dd007e76-6ce0-49b1-856a-1f1aa5323e4a
+                        name: ws_ext_cp
+                        type: vnfcp
+    -
+        networkIpV6Assignment:
+            isExternal: true
+            extCidr: '2001:db8:abcd::/64'
+            subnet: 747dc038-93b9-448e-881a-56793cfb0fff
+            addressAllocationMode: automatic
+        networkIpV4Assignment:
+            isExternal: true
+            extCidr: 10.0.0.0/24
+            subnet: 5e898e19-e596-4f8a-856b-de33b64ff379
+            addressAllocationMode: fixed_dynamic
+        associations:
+            - lb_ext_cp
+            - ws_ext_cp
+        key: dd007e76-6ce0-49b1-856a-1f1aa5323e4a
+        name: dualstack-mgmt-net
+        type: extNetwork
+configurableProperties:
+    enable_routing: false
+    mgmt_routes: 10.0.0.0/8
+    int_routes:
+        - '1'
+    ws_node_boot_size: '6 GB'
+    ws_node_storage_size: '5 GB'
+    lb_node_storage_size: '4 GB'
+    lb_node_storage_mount_point: /var/lib/storage
+    isAutohealEnabled: false
+    isAutoscaleEnabled: true
+    fullName: 'Test import'
+    address:
+        street: Test
+        apt: '1'
+    favMealList:
+        - '12'
+    age: '22'
+    married: false
+    motto: '2'
+    fail_on_update: false
