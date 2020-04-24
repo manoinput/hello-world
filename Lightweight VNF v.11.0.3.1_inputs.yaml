@@ -1,0 +1,71 @@
+flavour: default
+level: instantiationLevel1
+nodesData:
+    -
+        deploymentParams:
+            vim: 470ee1a9-bdbf-4d49-85f1-9d1d9a429c17
+            tenant: c7c42cd9f09d4901b6c8096a4cd9642d
+            floatingNetwork: c62c8514-94a8-4d77-8142-86ce31c9dc08
+        additionalParameters: null
+        futureName: 'Lightweight_VNF_Update anma1119'
+        description: null
+        configurableProperties: '{"nameserver_ip":"10.112.1.1","repo_name":"yumsrv.netcracker.com","repo_host":"10.232.1.205","repo_release":"trusty","enable_routing":false,"package_list":[],"left_aap":[],"right_aap":[],"mgmt_routes":"10.0.0.0/8","left_routes":[],"right_routes":[],"snmp_comm":"public_ro"}'
+        name: Lightweight_VNF_Update
+        type: vnf
+        externalNetworks:
+            - 63d09a0b-a6db-417b-9c2b-91d95a91924c
+        children:
+            -
+                zoneName: nova-1
+                name: server-1
+                type: vdu
+                children:
+                    -
+                        cpIpV6Assignment: null
+                        cpIpV4Assignment:
+                            ipAssignmentType: automatic
+                            fixedIps: []
+                            ipRanges: []
+                            dynamicSize: null
+                        ext_vl_key: 63d09a0b-a6db-417b-9c2b-91d95a91924c
+                        name: server_left_ext
+                        type: vnfcp
+                    -
+                        cpIpV6Assignment: null
+                        cpIpV4Assignment:
+                            ipAssignmentType: automatic
+                            fixedIps: []
+                            ipRanges: []
+                            dynamicSize: null
+                        ext_vl_key: 63d09a0b-a6db-417b-9c2b-91d95a91924c
+                        name: server_mgmt_ext
+                        type: vnfcp
+                    -
+                        cpIpV6Assignment: null
+                        cpIpV4Assignment:
+                            ipAssignmentType: automatic
+                            fixedIps: []
+                            ipRanges: []
+                            dynamicSize: null
+                        ext_vl_key: 63d09a0b-a6db-417b-9c2b-91d95a91924c
+                        name: server_right_ext
+                        type: vnfcp
+    -
+        networkIpV6Assignment:
+            regularCidr: null
+            extCidr: '2001:db8:abcd::/64'
+            subnet: e890d000-7123-4acc-bf46-f9377e4fb15d
+            addressAllocationMode: automatic
+        networkIpV4Assignment:
+            regularCidr: null
+            extCidr: 10.0.0.0/24
+            subnet: 9be69919-e708-4730-8d3b-7099c6293ac4
+            addressAllocationMode: automatic
+        associations:
+            - server_right_ext
+            - server_mgmt_ext
+            - server_left_ext
+        key: 63d09a0b-a6db-417b-9c2b-91d95a91924c
+        name: dualstack-mgmt-net
+        type: extNetwork
+        vim: 470ee1a9-bdbf-4d49-85f1-9d1d9a429c17
