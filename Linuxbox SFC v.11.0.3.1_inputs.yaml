@@ -1,0 +1,212 @@
+flavour: default
+level: InstLevel1
+nodesData:
+    -
+        deploymentParams:
+            vim: 3137c155-d8d6-4e39-bd40-e5f1701aaaff
+            tenant: b78117424040438cab7407e9fbf00fc5
+            floatingNetwork: 07ab874c-6822-4513-8e52-fb14f52cd271
+        useParent: false
+        additionalParameters: null
+        futureName: 'Linuxbox SFC'
+        description: null
+        configurableProperties: '{"check_parameters_modify":true,"fullName":"nwe","address":{},"favMealList":["new"],"age":"21","married":false,"motto":"new","traffic_test":false,"balance_test":false,"fail_update_add":false,"fail_update_remove":false}'
+        name: 'Linuxbox SFC'
+        type: ns
+        externalNetworks: []
+        children:
+            -
+                additionalParameters: null
+                futureName: LW_VNF_1
+                description: null
+                configurableProperties: null
+                name: LW_VNF_1
+                type: vnf
+                children:
+                    -
+                        zoneName: null
+                        name: server
+                        type: vdu
+                        children:
+                            -
+                                cpIpV6Assignment: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: server_left_ext
+                                type: vnfcp
+                            -
+                                cpIpV6Assignment: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: server_mgmt_ext
+                                type: vnfcp
+                            -
+                                cpIpV6Assignment: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: server_right_ext
+                                type: vnfcp
+            -
+                additionalParameters: null
+                futureName: LW_VNF_2
+                description: null
+                configurableProperties: null
+                name: LW_VNF_2
+                type: vnf
+                children:
+                    -
+                        zoneName: null
+                        name: server
+                        type: vdu
+                        children:
+                            -
+                                cpIpV6Assignment: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: server_left_ext
+                                type: vnfcp
+                            -
+                                cpIpV6Assignment: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: server_mgmt_ext
+                                type: vnfcp
+                            -
+                                cpIpV6Assignment: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: server_right_ext
+                                type: vnfcp
+            -
+                additionalParameters: null
+                futureName: test_vnf_left
+                description: null
+                configurableProperties: null
+                name: test_vnf_left
+                type: vnf
+                children:
+                    -
+                        zoneName: null
+                        name: server
+                        type: vdu
+                        children:
+                            -
+                                cpIpV6Assignment: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: server_left_ext
+                                type: vnfcp
+                            -
+                                cpIpV6Assignment: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: server_mgmt_ext
+                                type: vnfcp
+            -
+                additionalParameters: null
+                futureName: test_vnf_right
+                description: null
+                configurableProperties: null
+                name: test_vnf_right
+                type: vnf
+                children:
+                    -
+                        zoneName: null
+                        name: server
+                        type: vdu
+                        children:
+                            -
+                                cpIpV6Assignment: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: server_left_ext
+                                type: vnfcp
+                            -
+                                cpIpV6Assignment: null
+                                cpIpV4Assignment:
+                                    ipAssignmentType: automatic
+                                    fixedIps: []
+                                    ipRanges: []
+                                    dynamicSize: null
+                                ext_vl_key: ""
+                                name: server_mgmt_ext
+                                type: vnfcp
+            -
+                networkIpV6Assignment: null
+                networkIpV4Assignment:
+                    regularCidr: null
+                    extCidr: 10.0.0.0/24
+                    subnet: 9919d4c3-8b45-4c9d-ab8d-0202d82bbcda
+                    addressAllocationMode: automatic
+                zoneName: nova
+                extManagedLinkId: a2dbdede-a81e-47a0-8b1f-76d3bb2764d4
+                isExternal: true
+                name: left_vl
+                type: virtual_link
+                vim: 3137c155-d8d6-4e39-bd40-e5f1701aaaff
+            -
+                networkIpV6Assignment:
+                    regularCidr: null
+                    extCidr: '2001:db8:abcd::/64'
+                    subnet: f37b86b9-35ea-4e40-96cd-916ac1e6603d
+                    addressAllocationMode: automatic
+                networkIpV4Assignment:
+                    regularCidr: null
+                    extCidr: 10.0.0.0/24
+                    subnet: 9919d4c3-8b45-4c9d-ab8d-0202d82bbcda
+                    addressAllocationMode: automatic
+                zoneName: nova
+                extManagedLinkId: a2dbdede-a81e-47a0-8b1f-76d3bb2764d4
+                isExternal: true
+                name: mgmt_vl
+                type: virtual_link
+                vim: 3137c155-d8d6-4e39-bd40-e5f1701aaaff
+            -
+                networkIpV6Assignment: null
+                networkIpV4Assignment:
+                    regularCidr: null
+                    extCidr: 10.0.0.0/24
+                    subnet: 9919d4c3-8b45-4c9d-ab8d-0202d82bbcda
+                    addressAllocationMode: automatic
+                zoneName: nova
+                extManagedLinkId: a2dbdede-a81e-47a0-8b1f-76d3bb2764d4
+                isExternal: true
+                name: right_vl
+                type: virtual_link
+                vim: 3137c155-d8d6-4e39-bd40-e5f1701aaaff
