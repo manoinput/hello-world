@@ -1,0 +1,35 @@
+nodesData:
+    additionalParameters: "{\r\n    \"UPDATE_MUFASA_RED_CASE\": \"UPDATE_MUFASA_RED_VNF_CASE_BY_YUDM\",\r\n    \"mufasaUpdTermVnfParamBool\": false,\r\n    \"mufasaUpdTermVnfParamInt\": 1,\r\n    \"mufasaUpdTermVnfParamStr\": \"false\",\r\n\t    \"addParams_parameters_for_Mufasa\": {\r\n        \"a\": \"workflow_inputs_a\",\r\n        \"b\": \"test b\",\r\n        \"c\": \"test c\",\r\n        \"k\": \"workflow_default_k\",\r\n        \"n\":\"workflow_default_n\",\r\n        \"Complex\": {\r\n            \"sub1\": true,\r\n            \"sub2\": 2,\r\n            \"sub3\": \"yes\"\r\n        }\r\n  }\r\n}"
+    type: ns
+    descriptorId: mufasa_11_0_3_1
+    descriptorName: mufasa
+    children:
+        -
+            additionalParameters: "{\r\n    \"zazuTermParamBool\": false,\r\n    \"zazuTermParamInt\": 0,\r\n    \"zazuTermParamStr\": \"sd\",\r\n    \"UPDATE_ZAZU_RED_CASE\": \"BY_ZAZU\",\r\n    \"addParams_parameters_for_ZAZU\": {\r\n        \"a\": \"workflow_inputs_a\",\r\n        \"b\": \"test b\",\r\n        \"c\": \"test c\",\r\n        \"k\": \"workflow_default_k\",\r\n        \"n\":\"workflow_default_n\",\r\n        \"Complex\": {\r\n            \"sub1\": true,\r\n            \"sub2\": 2,\r\n            \"sub3\": \"yes\"\r\n        }\r\n  }\r\n}"
+            type: vnf
+            nodeTemplate: zazu1
+            children:
+                -
+                    type: vdu
+                    nodeTemplate: nala
+                    children:
+                        -
+                            type: vnfccp
+                            nodeTemplate: nala_data_cp
+                        -
+                            type: vnfcp
+                            nodeTemplate: nala_mgmt_ext_cp
+                -
+                    type: vdu
+                    nodeTemplate: simba
+                    children:
+                        -
+                            type: vnfccp
+                            nodeTemplate: simba_data_cp
+                        -
+                            type: vnfcp
+                            nodeTemplate: simba_mgmt_ext_cp
+                -
+                    type: virtual_link
+                    nodeTemplate: cub_vl
+nodeTemplateForTerminate: zazu1
