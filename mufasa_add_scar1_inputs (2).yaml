@@ -1,0 +1,87 @@
+nodesData:
+    additionalParameters: "{\r\n    \"isAutohealEnabled\": true,\r\n    \"isAutoscaleEnabled\": false,\r\n    \"mufasaUpdInstNsParamBool\": true,\r\n    \"mufasaUpdInstNsParamInt\": 2,\r\n    \"mufasaUpdInstNsParamStr\": \"true\",\r\n    \"UPDATE_MUFASA\": \"UPDATE_MUFASA_BY_YUDM\",\r\n    \"addParams_parameters_for_Mufasa\": {\r\n        \"a\": \"workflow_inputs_a\",\r\n        \"b\": \"test b\",\r\n        \"c\": \"test c\",\r\n        \"k\": \"workflow_default_k\",\r\n        \"n\":\"workflow_default_n\",\r\n        \"Complex\": {\r\n            \"sub1\": true,\r\n            \"sub2\": 2,\r\n            \"sub3\": \"yes\"\r\n        }\r\n  }\r\n}"
+    type: ns
+    descriptorId: mufasa_11_0_3_1
+    descriptorName: mufasa
+    children:
+        -
+            useParent: true
+            additionalParameters: "{\r\n    \"isAutohealEnabled\": true,\r\n    \"isAutoscaleEnabled\": true,\r\n    \"scarInstParamBool\": true,\r\n    \"scarInstParamInt\": 2,\r\n    \"scarInstParamStr\": \"true\",\r\n    \"UPDATE_SCAR1\": \"UPDATE_SCAR1_BY_YUDM\",\r\n    \"addParams_parameters_for_scar\": {\r\n        \"a\": \"workflow_inputs_a\",\r\n        \"b\": \"test b\",\r\n        \"c\": \"test c\",\r\n        \"k\": \"workflow_default_k\",\r\n        \"n\":\"workflow_default_n\",\r\n        \"Complex\": {\r\n            \"sub1\": true,\r\n            \"sub2\": 2,\r\n            \"sub3\": \"yes\"\r\n        }\r\n  }\r\n}"
+            futureName: scar1_new2
+            description: test2
+            configurableProperties: "{\r\n  \"scar_menu_list\": [],\r\n  \"zazu_menu_list\": [],\r\n  \"scar_kind\": \"1_UPDATE_yudm\",\r\n  \"scar_age\": 30,\r\n  \"zazu_isGoodGuy\": true,\r\n  \"zazu_age\": 15,\r\n  \"zazu_kind\": \"1_UPDATE_yudm\",\r\n  \"scar_isGoodGuy\": true\r\n}"
+            type: ns
+            nodeTemplate: scar1
+            children:
+                -
+                    additionalParameters: "{\r\n    \"isAutohealEnabled\": true,\r\n    \"isAutoscaleEnabled\": true,\r\n    \"zazuInstParamBool\": true,\r\n    \"zazuInstParamInt\": 2,\r\n    \"zazuInstParamStr\": \"true\",\r\n    \"UPDATE_ZAZU\": \"UPDATE_ZAZU_BY_YUDM\",\r\n    \"addParams_parameters_for_zazu\": {\r\n        \"a\": \"workflow_inputs_a\",\r\n        \"b\": \"test b\",\r\n        \"c\": \"test c\",\r\n        \"k\": \"workflow_default_k\",\r\n        \"n\":\"workflow_default_n\",\r\n        \"Complex\": {\r\n            \"sub1\": true,\r\n            \"sub2\": 2,\r\n            \"sub3\": \"yes\"\r\n        }\r\n  }\r\n}"
+                    futureName: zazu_new2
+                    description: test2
+                    configurableProperties: null
+                    type: vnf
+                    nodeTemplate: zazu
+                    children:
+                        -
+                            zoneName: null
+                            type: vdu
+                            nodeTemplate: nala
+                            children:
+                                -
+                                    type: vnfccp
+                                    nodeTemplate: nala_data_cp
+                                -
+                                    cpIpV6Assignment:
+                                        ipAssignmentType: automatic
+                                        fixedIps: []
+                                        ipRanges: []
+                                        dynamicSize: null
+                                    cpIpV4Assignment:
+                                        ipAssignmentType: automatic
+                                        fixedIps: []
+                                        ipRanges: []
+                                        dynamicSize: null
+                                    ext_vl_key: ""
+                                    type: vnfcp
+                                    nodeTemplate: nala_mgmt_ext_cp
+                        -
+                            zoneName: null
+                            type: vdu
+                            nodeTemplate: simba
+                            children:
+                                -
+                                    type: vnfccp
+                                    nodeTemplate: simba_data_cp
+                                -
+                                    cpIpV6Assignment:
+                                        ipAssignmentType: automatic
+                                        fixedIps: []
+                                        ipRanges: []
+                                        dynamicSize: null
+                                    cpIpV4Assignment:
+                                        ipAssignmentType: automatic
+                                        fixedIps: []
+                                        ipRanges: []
+                                        dynamicSize: null
+                                    ext_vl_key: ""
+                                    type: vnfcp
+                                    nodeTemplate: simba_mgmt_ext_cp
+                        -
+                            networkIpV6Assignment:
+                                regularCidr: ""
+                                extCidr: '2001:db8:abcd::/64'
+                                subnet: b547441c-ae92-4392-9f0f-610f65a6d8f0
+                                addressAllocationMode: automatic
+                            networkIpV4Assignment:
+                                regularCidr: ""
+                                extCidr: 10.0.0.0/24
+                                subnet: ca7d55e0-fbec-4a92-82dc-57006b448a53
+                                addressAllocationMode: automatic
+                            zoneName: nova
+                            extManagedLinkId: 231e9bab-ae61-453c-933a-03b05b5412f1
+                            isExternal: true
+                            type: virtual_link
+                            vim: 15b34554-631d-4a98-b722-9d8e42d7f6d1
+                            nodeTemplate: cub_vl
+nodeTemplateForAdd: scar1
+flavour: default
+level: instantiationLevel1
