@@ -1,0 +1,84 @@
+flavour: default
+level: instantiationLevel1
+nodesData:
+    -
+        deploymentParams:
+            vim: c8df06da-9bae-4b17-94bb-612f7d3ff348
+            tenant: b78117424040438cab7407e9fbf00fc5
+            floatingNetwork: 07ab874c-6822-4513-8e52-fb14f52cd271
+        additionalParameters: null
+        futureName: Lightweight_VNF_Update
+        description: null
+        configurableProperties: '{"enable_routing":false,"mgmt_routes":"10.0.0.0/8","int_routes":[],"ws_node_boot_size":"6 GB","ws_node_storage_size":"6 GB","lb_node_storage_size":"6 GB","lb_node_storage_mount_point":"/var/lib/storage","isAutohealEnabled":true,"isAutoscaleEnabled":true,"fullName":"new","address":{"street":"new","apt":"10"},"favMealList":["new"],"age":"15","married":false,"motto":"new","fail_on_update":false}'
+        name: Lightweight_VNF_Update
+        type: vnf
+        externalNetworks:
+            - eff0dd4e-ea84-4326-9860-02109caab466
+        children:
+            -
+                zoneName: null
+                name: lb_node-1
+                type: vdu
+                children:
+                    -
+                        name: lb_data_int_cp
+                        type: vnfccp
+                    -
+                        cpIpV6Assignment: null
+                        cpIpV4Assignment:
+                            ipAssignmentType: automatic
+                            fixedIps: []
+                            ipRanges: []
+                            dynamicSize: null
+                        ext_vl_key: eff0dd4e-ea84-4326-9860-02109caab466
+                        name: lb_ext_cp
+                        type: vnfcp
+            -
+                networkIpV6Assignment: null
+                networkIpV4Assignment:
+                    regularCidr: null
+                    extCidr: 10.0.0.0/24
+                    subnet: 93cbada6-8ee5-4b7d-8a38-7ae649bd4151
+                    addressAllocationMode: automatic
+                zoneName: nova
+                extManagedLinkId: eff0dd4e-ea84-4326-9860-02109caab466
+                isExternal: true
+                name: lb_ws_vl
+                type: virtual_link
+                vim: c8df06da-9bae-4b17-94bb-612f7d3ff348
+            -
+                zoneName: null
+                name: ws_node-1
+                type: vdu
+                children:
+                    -
+                        name: ws_data_int_cp
+                        type: vnfccp
+                    -
+                        cpIpV6Assignment: null
+                        cpIpV4Assignment:
+                            ipAssignmentType: automatic
+                            fixedIps: []
+                            ipRanges: []
+                            dynamicSize: null
+                        ext_vl_key: eff0dd4e-ea84-4326-9860-02109caab466
+                        name: ws_ext_cp
+                        type: vnfcp
+    -
+        networkIpV6Assignment:
+            regularCidr: null
+            extCidr: '2001:db8:abcd::/64'
+            subnet: f727009f-4cd8-494e-bc81-b0c0dbf0a724
+            addressAllocationMode: automatic
+        networkIpV4Assignment:
+            regularCidr: null
+            extCidr: 10.0.0.0/24
+            subnet: 93cbada6-8ee5-4b7d-8a38-7ae649bd4151
+            addressAllocationMode: automatic
+        associations:
+            - lb_ext_cp
+            - ws_ext_cp
+        key: eff0dd4e-ea84-4326-9860-02109caab466
+        name: dualstack-mgmt-net
+        type: extNetwork
+        vim: c8df06da-9bae-4b17-94bb-612f7d3ff348
