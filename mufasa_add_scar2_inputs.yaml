@@ -1,0 +1,87 @@
+nodesData:
+    additionalParameters: "{\r\n  \"isAutohealEnabled\": true,\r\n  \"isAutoscaleEnabled\": false,\r\n  \"mufasaUpdInstNsParamBool\": false,\r\n  \"mufasaUpdInstNsParamInt\": 0,\r\n  \"mufasaUpdInstNsParamStr\": \"mufasaUpdInstNsParamStr\"\r\n}"
+    type: ns
+    descriptorId: mufasa_11_0_3_2
+    descriptorName: mufasa
+    children:
+        -
+            useParent: true
+            additionalParameters: null
+            futureName: scar2
+            description: null
+            configurableProperties: null
+            type: ns
+            nodeTemplate: scar2
+            children:
+                -
+                    additionalParameters: null
+                    futureName: zazu
+                    description: null
+                    configurableProperties: null
+                    type: vnf
+                    nodeTemplate: zazu
+                    children:
+                        -
+                            zoneName: null
+                            type: vdu
+                            nodeTemplate: nala
+                            children:
+                                -
+                                    type: vnfccp
+                                    nodeTemplate: nala_data_cp
+                                -
+                                    cpIpV6Assignment:
+                                        ipAssignmentType: automatic
+                                        fixedIps: null
+                                        ipRanges: null
+                                        dynamicSize: null
+                                    cpIpV4Assignment:
+                                        ipAssignmentType: automatic
+                                        fixedIps: null
+                                        ipRanges: null
+                                        dynamicSize: null
+                                    ext_vl_key: ""
+                                    type: vnfcp
+                                    nodeTemplate: nala_mgmt_ext_cp
+                        -
+                            zoneName: null
+                            type: vdu
+                            nodeTemplate: simba
+                            children:
+                                -
+                                    type: vnfccp
+                                    nodeTemplate: simba_data_cp
+                                -
+                                    cpIpV6Assignment:
+                                        ipAssignmentType: automatic
+                                        fixedIps: null
+                                        ipRanges: null
+                                        dynamicSize: null
+                                    cpIpV4Assignment:
+                                        ipAssignmentType: automatic
+                                        fixedIps: null
+                                        ipRanges: null
+                                        dynamicSize: null
+                                    ext_vl_key: ""
+                                    type: vnfcp
+                                    nodeTemplate: simba_mgmt_ext_cp
+                        -
+                            networkIpV6Assignment:
+                                regularCidr: null
+                                extCidr: null
+                                subnet: null
+                                addressAllocationMode: automatic
+                            networkIpV4Assignment:
+                                regularCidr: null
+                                extCidr: null
+                                subnet: null
+                                addressAllocationMode: automatic
+                            zoneName: null
+                            extManagedLinkId: null
+                            isExternal: false
+                            type: virtual_link
+                            vim: f05f8394-e78e-4d85-af14-4f02a52d928e
+                            nodeTemplate: cub_vl
+nodeTemplateForAdd: scar2
+flavour: default
+level: instantiationLevel1
